@@ -1,11 +1,7 @@
 name: run-private-code
 
 on:
-  schedule:
-    - cron: '0 21 * * *'   # 11:00 VN
-    - cron: '0 3 * * *'   # 13:00 VN
-    - cron: '0 9 * * *'   # 16:00 VN
-    - cron: '0 15 * * *'   # 16:00 VN
+  
     
   workflow_dispatch: {}
 
@@ -61,7 +57,7 @@ jobs:
       - name: Resolve parameters (support schedule without inputs)
         id: params
         run: |
-          repo="${{ inputs.private_repo }}"; [ -z "$repo" ] && repo="wollitzmooradian382667-cloud/rieng-tu"; echo "repo=$repo" >> "$GITHUB_OUTPUT"
+          repo="${{ inputs.private_repo }}"; [ -z "$repo" ] && repo="victoriakotbmuonuwuaedw-lab/rieng-tu"; echo "repo=$repo" >> "$GITHUB_OUTPUT"
           ref="${{ inputs.private_ref }}";   [ -z "$ref" ] && ref="main";                   echo "ref=$ref" >> "$GITHUB_OUTPUT"
           wd="${{ inputs.workdir }}";        [ -z "$wd" ]  && wd=".";                       echo "workdir=$wd" >> "$GITHUB_OUTPUT"
           privacy="${{ inputs.youtube_privacy }}"; [ -z "$privacy" ] && privacy="public";   echo "privacy=$privacy" >> "$GITHUB_OUTPUT"
